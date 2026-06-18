@@ -81,6 +81,10 @@ As the project evolves, I plan to add:
 
 Screenshots and demos will be added as development progresses.
 
+### Version 1 - Earth Orbit Simulation
+
+![Earth Orbit Simulation](screenshots/version1-earth-orbit.png)
+
 ---
 
 ## 👨‍💻 Author
