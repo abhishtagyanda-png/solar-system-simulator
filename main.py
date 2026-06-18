@@ -16,26 +16,28 @@ sun.color("yellow")
 sun.shapesize(2)
 sun.penup()
 
-# Draw orbit path
-orbit = turtle.Turtle()
-orbit.hideturtle()
-orbit.color("white")
-orbit.penup()
-orbit.goto(0, -150)
-orbit.pendown()
-orbit.circle(150)
+def create_orbit(radius):
+    orbit = turtle.Turtle()
+    orbit.hideturtle()
+    orbit.color("white")
+    orbit.penup()
+    orbit.goto(0, -radius)
+    orbit.pendown()
+    orbit.circle(radius)
 
-# Create Earth
-earth = Planet("Earth", "blue", 150)
+    create_orbit(80)
+    create_orbit(120)
+    create_orbit(150)
+    create_orbit(220)
 
-#Create Mercury
-mercury = Planet("Mercury", "gray", 80)
+    
+earth = Planet("Earth", "blue", 150, 0.005)
 
-# Create Venus
-venus = Planet("Venus", "orange", 120)
+mercury = Planet("Mercury", "gray", 80, 0.01)
 
-# Create Mars
-mars = Planet("Mars", "red", 200)
+venus = Planet("Venus", "orange", 120, 0.007)
+
+mars = Planet("Mars", "red", 220, 0.003)
 
 writer = turtle.Turtle()
 writer.hideturtle()
