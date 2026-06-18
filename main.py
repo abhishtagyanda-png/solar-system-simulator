@@ -30,6 +30,12 @@ earth.shape("circle")
 earth.color("blue")
 earth.penup()
 
+writer = turtle.Turtle()
+writer.hideturtle()
+writer.color("white")
+writer.penup()
+writer.goto(-250, 180)
+
 # Orbit variables
 angle = 0
 radius = 150
@@ -41,9 +47,15 @@ while True:
 
     earth.goto(x, y)
 
+    writer.clear()
+
+    writer.write(
+        f"Planet: Earth\nOrbit Radius: {radius}\nAngle: {angle:.2f}",
+        font=("Arial", 14, "normal")
+    )
+
     screen.update()
 
-    angle += 0.01
+    angle += 0.005
 
     time.sleep(0.01)
-  
