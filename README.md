@@ -85,6 +85,10 @@ Screenshots and demos will be added as development progresses.
 
 ![Earth Orbit Simulation](screenshots/version1-earth-orbit.png)
 
+### Version 2 - Multiple Planet Simulation
+
+![Multiple Planets](screenshots/version2-multiple-planets.png)
+
 ---
 
 ## 👨‍💻 Author
