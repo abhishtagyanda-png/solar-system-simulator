@@ -1,5 +1,6 @@
 import turtle
 import math
+import time
 
 # Create screen
 screen = turtle.Screen()
@@ -43,3 +44,6 @@ while True:
     screen.update()
 
     angle += 0.01
+
+    time.sleep(0.01)
+  
