@@ -1,6 +1,7 @@
 import turtle
 import math
 import time
+from planet import Planet
 
 # Create screen
 screen = turtle.Screen()
@@ -25,10 +26,16 @@ orbit.pendown()
 orbit.circle(150)
 
 # Create Earth
-earth = turtle.Turtle()
-earth.shape("circle")
-earth.color("blue")
-earth.penup()
+earth = Planet("Earth", "blue", 150)
+
+#Create Mercury
+mercury = Planet("Mercury", "gray", 80)
+
+# Create Venus
+venus = Planet("Venus", "orange", 120)
+
+# Create Mars
+mars = Planet("Mars", "red", 200)
 
 writer = turtle.Turtle()
 writer.hideturtle()
@@ -42,20 +49,15 @@ radius = 150
 
 # Animation loop
 while True:
-    x = radius * math.cos(angle)
-    y = radius * math.sin(angle)
 
-    earth.goto(x, y)
+    earth.move()
 
-    writer.clear()
+    mercury.move()
 
-    writer.write(
-        f"Planet: Earth\nOrbit Radius: {radius}\nAngle: {angle:.2f}",
-        font=("Arial", 14, "normal")
-    )
+    venus.move()
+
+    mars.move()
 
     screen.update()
-
-    angle += 0.005
 
     time.sleep(0.01)
