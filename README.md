@@ -1,69 +1,91 @@
-#Solar System Simulator 🌍☀️
+# 🌍 Solar System Simulator
 
-A Python-based astrophysics project that simulates planetary motion around the Sun.
+> A Python-based astrophysics project exploring planetary motion through simulation.
 
-#About
+## 🚀 About the Project
 
-This project is part of my journey to learn Python programming and explore concepts in astrophysics.
+This project is part of my journey to learn **Python**, **Astrophysics**, and **Scientific Computing**.
 
 The goal is to build a visual simulation of the Solar System while understanding the mathematics and physics behind planetary motion.
 
-#Current Progress
-#Version 1 (In Development)
+---
 
-Repository setup
+## 📈 Current Progress
 
-GitHub integration
+### Version 1: Earth Orbit Simulation
 
-Sun created using Turtle Graphics
+* [x] Repository Setup
+* [x] GitHub Integration
+* [x] Sun Created Using Turtle Graphics
+* [ ] Earth Object
+* [ ] Orbit Path
+* [ ] Earth Orbit Animation
 
-Earth object
+---
 
-Orbit path
+## 🛠 Technologies Used
 
-Earth orbit animation
+* Python
+* Turtle Graphics
+* Math Module
+* Git
+* GitHub
 
-#Technologies Used
-Python
-Turtle Graphics
-Math Module
-Git & GitHub
-#Concepts Being Learned
-Object-Oriented Programming (OOP)
-Trigonometry
-Orbital Motion
-Basic Astrophysics
-Scientific Visualization
-#Roadmap
-#Version 1
-Sun at the center
-Earth orbiting the Sun
-Circular orbit animation
-#Version 2
-Add Mercury, Venus, Mars and other planets
-Improve visuals
-#Version 3
-Display orbital velocity
-Display orbital periods
-Display distance from the Sun
-#Future Goals
-Simulate gravitational interactions
-Create a scalable Solar System model
-Improve realism of planetary motion
-#Screenshots
+---
 
-Screenshots and demonstrations will be added as development progresses.
+## 🧠 Concepts Covered
 
-#Author
+* Object-Oriented Programming (OOP)
+* Trigonometry
+* Orbital Motion
+* Scientific Visualization
+* Basic Astrophysics
 
-Abhishta Gyanda
+---
+
+## 🗺 Roadmap
+
+### Version 1
+
+* Sun at the center
+* Earth orbiting the Sun
+* Circular orbit animation
+
+### Version 2
+
+* Add Mercury, Venus, Mars and other planets
+* Improve visuals
+
+### Version 3
+
+* Display orbital velocity
+* Display orbital periods
+* Display distance from the Sun
+
+### Future Goals
+
+* Simulate gravitational interactions
+* Scale the Solar System model
+* Improve realism of planetary motion
+
+---
+
+## 📸 Screenshots
+
+Screenshots and demos will be added as development progresses.
+
+---
+
+## 👨‍💻 Author
+
+**Abhishta Gyanda**
 
 Computer Science Engineering Student
 Delhi Technological University (DTU)
 
-#Interested in:
+### Interests
 
-Astrophysics
-Space Exploration
-Programming
-Scientific Computing
+* 🌌 Astrophysics
+* 🚀 Space Exploration
+* 💻 Programming
+* 🔬 Scientific Computing
