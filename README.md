@@ -62,13 +62,20 @@ The goal is to build a visual simulation of the Solar System while understanding
 * Display orbital periods
 * Display distance from the Sun
 
-### Future Goals
+## 🔭 Future Features
 
-* Simulate gravitational interactions
-* Scale the Solar System model
-* Improve realism of planetary motion
+As the project evolves, I plan to add:
 
----
+* Planet information panels
+* Orbital period visualization
+* Distance from the Sun display
+* Speed controls
+* Pause and Resume functionality
+* Exoplanet simulation mode
+* Habitable Zone visualization
+* Demonstrations of Kepler's Laws of Planetary Motion
+* Improved graphics and realism
+* Interactive user controls
 
 ## 📸 Screenshots
 
