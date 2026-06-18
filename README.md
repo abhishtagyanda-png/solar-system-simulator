@@ -14,9 +14,9 @@ The goal is to build a visual simulation of the Solar System while understanding
 
 ### Version 1: Earth Orbit Simulation
 
-* [x] Repository Setup
-* [x] GitHub Integration
-* [x] Sun Created Using Turtle Graphics
+* [ ] Repository Setup
+* [ ] GitHub Integration
+* [ ] Sun Created Using Turtle Graphics
 * [ ] Earth Object
 * [ ] Orbit Path
 * [ ] Earth Orbit Animation
