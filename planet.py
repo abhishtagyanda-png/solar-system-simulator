@@ -25,3 +25,8 @@ class Planet:
         self.body.goto(x, y)
 
         self.angle += self.speed
+
+
+    def get_info(self):
+
+        return f"{self.name}\nOrbit Radius: {self.orbit_radius}"
