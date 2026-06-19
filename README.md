@@ -147,11 +147,11 @@ As development progresses, new features are added incrementally, allowing the pr
 
 ### Version 4.1 — Complete Solar System Expansion
 
-![Solar System Simulator](version4.1-full-solarsystem.png)
+![Solar System Simulator](screenshots/version4.1-full-solarsystem.png)
 
 ### Version 4.2 - Movement of Asteroid Belt
 
-![Moving Asteroid Belt](version4-2-moving-asteroid-belt.mp4)
+![Moving Asteroid Belt](demos/version4-2-moving-asteroid-belt.mp4)
 
 
 ---
