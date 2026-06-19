@@ -18,6 +18,7 @@ sun.shapesize(2)
 sun.penup()
 
 
+
 # Function to create orbit circles
 def create_orbit(radius):
 
@@ -32,24 +33,65 @@ def create_orbit(radius):
     orbit.circle(radius)
 
 
-# Draw planet orbits
-create_orbit(80)    # Mercury
-create_orbit(120)   # Venus
-create_orbit(150)   # Earth
-create_orbit(220)   # Mars
+
+# Draw orbits
+
+create_orbit(80)     # Mercury
+create_orbit(120)    # Venus
+create_orbit(150)    # Earth
+create_orbit(220)    # Mars
+
 
 
 # Create planets
-mercury = Planet("Mercury", "gray", 80, 0.01)
 
-venus = Planet("Venus", "orange", 120, 0.007)
+mercury = Planet(
+    "Mercury",
+    "gray",
+    80,
+    0.01,
+    "57.9 million km",
+    "88 days",
+    "47.36 km/s"
+)
 
-earth = Planet("Earth", "blue", 150, 0.005)
 
-mars = Planet("Mars", "red", 220, 0.003)
+venus = Planet(
+    "Venus",
+    "orange",
+    120,
+    0.007,
+    "108.2 million km",
+    "225 days",
+    "35.02 km/s"
+)
 
 
-# Information text
+earth = Planet(
+    "Earth",
+    "blue",
+    150,
+    0.005,
+    "149.6 million km",
+    "365 days",
+    "29.78 km/s"
+)
+
+
+mars = Planet(
+    "Mars",
+    "red",
+    220,
+    0.003,
+    "227.9 million km",
+    "687 days",
+    "24.07 km/s"
+)
+
+
+
+# Information panel
+
 info = turtle.Turtle()
 info.hideturtle()
 info.color("white")
@@ -57,48 +99,103 @@ info.penup()
 
 
 # Animation loop
+
 while True:
 
+
     # Move planets
+
     mercury.move()
     venus.move()
     earth.move()
     mars.move()
 
 
-    # Update information
+    # Clear text
+
     info.clear()
 
 
-    info.goto(-350, 200)
+
+    # Mercury
+
+    info.goto(-450, 250)
+
     info.write(
-        f"Mercury\nOrbit Radius: {mercury.orbit_radius}",
-        font=("Arial", 12, "normal")
+        f"""Mercury
+
+Distance:
+{mercury.distance}
+
+Period:
+{mercury.period}
+
+Velocity:
+{mercury.velocity}""",
+        font=("Arial", 10, "normal")
     )
 
 
-    info.goto(-350, 140)
+
+    # Venus
+
+    info.goto(-450, 80)
+
     info.write(
-        f"Venus\nOrbit Radius: {venus.orbit_radius}",
-        font=("Arial", 12, "normal")
+        f"""Venus
+
+Distance:
+{venus.distance}
+
+Period:
+{venus.period}
+
+Velocity:
+{venus.velocity}""",
+        font=("Arial", 10, "normal")
     )
 
 
-    info.goto(-350, 80)
+
+    # Earth
+
+    info.goto(-450, -90)
+
     info.write(
-        f"Earth\nOrbit Radius: {earth.orbit_radius}",
-        font=("Arial", 12, "normal")
+        f"""Earth
+
+Distance:
+{earth.distance}
+
+Period:
+{earth.period}
+
+Velocity:
+{earth.velocity}""",
+        font=("Arial", 10, "normal")
     )
 
 
-    info.goto(-350, 20)
+
+    # Mars
+
+    info.goto(-450, -260)
+
     info.write(
-        f"Mars\nOrbit Radius: {mars.orbit_radius}",
-        font=("Arial", 12, "normal")
+        f"""Mars
+
+Distance:
+{mars.distance}
+
+Period:
+{mars.period}
+
+Velocity:
+{mars.velocity}""",
+        font=("Arial", 10, "normal")
     )
 
 
-    # Refresh screen
     screen.update()
 
     time.sleep(0.01)
