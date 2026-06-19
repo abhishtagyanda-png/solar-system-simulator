@@ -1,57 +1,57 @@
 # 🌍 Solar System Simulator
 
-> A Python-based astrophysics project that visualizes planetary motion and explores the mathematics and physics behind our Solar System.
+> A Python-based astrophysics project that visualizes planetary motion and explores the mathematics, physics, and computational principles governing our Solar System.
 
 ## 🚀 About the Project
 
-This project is part of my journey to learn **Python**, **Astrophysics**, and **Scientific Computing**.
+The Solar System Simulator is a personal project developed as part of my journey into **Python programming**, **Astrophysics**, and **Scientific Computing**.
 
-The simulator models planetary motion using trigonometric functions and object-oriented programming while gradually incorporating real astronomical data and interactive features.
+The project began with a simple Earth orbit simulation and is gradually evolving into a complete interactive Solar System model. Through this project, I aim to better understand orbital mechanics, trigonometry, object-oriented programming, simulation design, and real-world astronomical concepts.
+
+As development progresses, new features are added incrementally, allowing the project to serve both as a learning experience and as a practical demonstration of scientific visualization using Python.
 
 ---
 
-## 📈 Current Progress
+## 📈 Development Progress
 
-### Version 1: Earth Orbit Simulation ✅
+### Version 1 — Earth Orbit Simulation
 
-* Repository Setup
-* GitHub Integration
-* Sun Created Using Turtle Graphics
-* Earth Object
-* Orbit Path
-* Earth Orbit Animation
+* Repository setup and GitHub integration
+* Sun created using Turtle Graphics
+* Earth object implementation
+* Circular orbit path
+* Continuous orbital animation
 
-### Version 2: Multi-Planet Simulation ✅
+### Version 2 — Multi-Planet Simulation
 
-* Planet Class (OOP)
-* Mercury Added
-* Venus Added
-* Earth Added
-* Mars Added
-* Multiple Orbit Paths
-* Planet Information Panel
+* Object-Oriented Programming structure
+* Planet class implementation
+* Mercury added
+* Venus added
+* Earth added
+* Mars added
+* Multiple orbital paths
+* Initial planetary information display
 
-### Version 3: Planetary Data System ✅
+### Version 3 — Planetary Data Integration
 
-* Distance from Sun
-* Orbital Period
-* Orbital Velocity
-* Planet Data Integration
-* Improved Information Display
+* Real planetary distance data
+* Orbital period information
+* Orbital velocity information
+* Improved information system
+* Enhanced simulation structure
 
-### Version 4: Complete Solar System & Interactivity 🚧
+### Version 4.1 — Complete Solar System Expansion
 
-Current Development:
-
-* Add Jupiter
-* Add Saturn
-* Add Uranus
-* Add Neptune
-* Add Asteroid Belt
-* Planet Labels
-* Interactive Information System
-* Speed Controls
-* Pause / Resume
+* Jupiter added
+* Saturn added
+* Uranus added
+* Neptune added
+* Planet size scaling
+* Planet labels
+* Asteroid Belt added
+* Improved Solar System layout
+* Enhanced visual realism
 
 ---
 
@@ -66,56 +66,66 @@ Current Development:
 
 ---
 
-## 🧠 Concepts Covered
+## 🧠 Concepts Explored
 
 * Object-Oriented Programming
 * Trigonometry
 * Circular Motion
-* Orbital Motion
+* Orbital Mechanics
 * Scientific Visualization
-* Basic Astrophysics
+* Astrophysics Fundamentals
 * Simulation Design
 * Software Development Workflow
+* Version Control with Git
 
 ---
 
-## 🗺 Roadmap
+## 🗺 Project Roadmap
 
-### Version 4
+### Version 4.2
 
-* Complete the 8-Planet Solar System
-* Asteroid Belt Simulation
-* Planet Labels
-* Interactive Planet Selection
-* Speed Controls
-* Pause / Resume
+* Saturn Ring System
+* Moving Asteroid Belt
+* Improved Visual Effects
+
+### Version 4.3
+
+* Planet Information on Selection
+* Interactive Information Panel
+* Better Planet Scaling
 
 ### Version 5
 
+* Speed Controls
+* Pause / Resume Functionality
 * Habitable Zone Visualization
 * Kepler's Laws Demonstration
-* Improved Physics Model
-* Enhanced Graphics
 
 ### Version 6
 
+* Improved Physics Model
+* Enhanced Graphics
+* More Realistic Orbital Motion
+
+### Version 7
+
 * Web-Based Interactive Simulator
-* Modern UI
+* Modern User Interface
 * Real Astronomical Data Integration
 * Advanced Astrophysics Features
 
 ---
 
-## 🔭 Future Features
+## 🔭 Future Goals
 
-* Full Solar System Simulation
-* Asteroid Belt
-* Planet Hover Information
-* Interactive Controls
+* Interactive Solar System Exploration
+* Dynamic Asteroid Belt
+* Planet Information Panels
 * Habitable Zone Visualization
 * Kepler's Laws Demonstration
 * Exoplanet Simulation Mode
-* Real NASA Data Integration
+* NASA Data Integration
+* Improved Scientific Accuracy
 * Enhanced Graphics and Realism
 * Web Deployment
 
@@ -123,17 +133,21 @@ Current Development:
 
 ## 📸 Screenshots
 
-### Version 1 - Earth Orbit Simulation
+### Version 1 — Earth Orbit Simulation
 
 ![Earth Orbit Simulation](screenshots/version1-earth-orbit.png)
 
-### Version 2 - Multiple Planet Simulation
+### Version 2 — Multi-Planet Simulation
 
 ![Multiple Planets](screenshots/version2-multiple-planets.png)
 
-### Version 3 - Planetary Data System
+### Version 3 — Planetary Data Integration
 
 ![Planetary Data](screenshots/version3-officialdataof_planets.png)
+
+### Version 4.1 — Complete Solar System Expansion
+
+![Solar System Simulator](version4.1-full-solarsystem.png)
 
 ---
 
@@ -144,11 +158,15 @@ Current Development:
 Computer Science Engineering Student
 Delhi Technological University (DTU)
 
-### Interests
+### Areas of Interest
 
 * 🌌 Astrophysics
 * 🚀 Space Exploration
 * 💻 Software Development
 * 🔬 Scientific Computing
+* 🛰 Space Technology
 
-> “We are all made of star-stuff.” — Carl Sagan
+---
+
+> *“We are all made of star-stuff.”* — Carl Sagan
+
