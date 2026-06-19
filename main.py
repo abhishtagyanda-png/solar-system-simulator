@@ -19,7 +19,7 @@ screen.tracer(0)
 sun = turtle.Turtle()
 sun.shape("circle")
 sun.color("yellow")
-sun.shapesize(4)
+sun.shapesize(3.5)
 sun.penup()
 
 sun_label = turtle.Turtle()
