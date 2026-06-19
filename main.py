@@ -40,6 +40,7 @@ create_orbit(80)     # Mercury
 create_orbit(120)    # Venus
 create_orbit(150)    # Earth
 create_orbit(220)    # Mars
+create_orbit(300)    # Jupiter
 
 
 
@@ -88,6 +89,16 @@ mars = Planet(
     "24.07 km/s"
 )
 
+jupiter = Planet(
+    "Jupiter",  
+    "orange",
+    300,        
+    0.001,
+    "778.5 million km",
+    "4333 days",
+    "13.07 km/s"
+)
+
 
 
 # Information panel
@@ -109,7 +120,7 @@ while True:
     venus.move()
     earth.move()
     mars.move()
-
+    jupiter.move()  
 
     # Clear text
 
@@ -195,6 +206,23 @@ Velocity:
         font=("Arial", 10, "normal")
     )
 
+    # Jupiter
+
+    info.goto(-450, -430)
+
+    info.write(
+        f"""Jupiter
+
+Distance:
+{jupiter.distance}
+
+Period:
+{jupiter.period}
+
+Velocity:
+{jupiter.velocity}""",
+        font=("Arial", 10, "normal")
+    )
 
     screen.update()
 
