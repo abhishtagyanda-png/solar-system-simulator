@@ -57,8 +57,6 @@ create_orbit(370)
 create_orbit(440)
 
 
-# Asteroid Belt
-
 asteroids = []
 
 for _ in range(300):
@@ -70,15 +68,25 @@ for _ in range(300):
     asteroid.penup()
 
     radius = random.randint(180, 210)
-    angle = random.uniform(0, 2 * math.pi)
 
-    x = radius * math.cos(angle)
-    y = radius * math.sin(angle)
+    angle = random.uniform(
+        0,
+        2 * math.pi
+    )
 
-    asteroid.goto(x, y)
+    speed = random.uniform(
+        0.0005,
+        0.0015
+    )
 
-    asteroids.append(asteroid)
+    asteroid_data = {
+        "body": asteroid,
+        "radius": radius,
+        "angle": angle,
+        "speed": speed
+    }
 
+    asteroids.append(asteroid_data)
 
 # Planets
 
@@ -195,7 +203,6 @@ while True:
     jupiter.move()
     saturn.move()
 
-
     saturn_ring.goto(
         saturn.body.xcor(),
         saturn.body.ycor()
@@ -203,6 +210,22 @@ while True:
 
     uranus.move()
     neptune.move()
+
+    for asteroid in asteroids:
+
+        asteroid["angle"] += asteroid["speed"]
+
+        x = (
+            asteroid["radius"]
+            * math.cos(asteroid["angle"])
+        )
+
+        y = (
+            asteroid["radius"]
+            * math.sin(asteroid["angle"])
+        )
+
+        asteroid["body"].goto(x, y)
 
     screen.update()
     time.sleep(0.01)
