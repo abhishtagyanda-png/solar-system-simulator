@@ -1,9 +1,12 @@
 import turtle
 import time
+import random
+import math
 from planet import Planet
 
 
-# Screen setup
+# Screen Setup
+
 screen = turtle.Screen()
 screen.title("Solar System Simulator")
 screen.bgcolor("black")
@@ -12,14 +15,23 @@ screen.tracer(0)
 
 
 # Sun
+
 sun = turtle.Turtle()
 sun.shape("circle")
 sun.color("yellow")
 sun.shapesize(4)
 sun.penup()
 
+sun_label = turtle.Turtle()
+sun_label.hideturtle()
+sun_label.color("white")
+sun_label.penup()
+sun_label.goto(25, 25)
+sun_label.write("Sun", font=("Arial", 10, "bold"))
 
-# Function to create orbit circles
+
+# Orbit Drawing Function
+
 def create_orbit(radius):
 
     orbit = turtle.Turtle()
@@ -33,24 +45,47 @@ def create_orbit(radius):
     orbit.circle(radius)
 
 
-# Draw orbits
+# Orbits
 
-create_orbit(80)      # Mercury
-create_orbit(120)     # Venus
-create_orbit(150)     # Earth
-create_orbit(220)     # Mars
-create_orbit(320)     # Jupiter
-create_orbit(420)     # Saturn
-create_orbit(520)     # Uranus
-create_orbit(620)     # Neptune
+create_orbit(50)
+create_orbit(80)
+create_orbit(110)
+create_orbit(160)
+create_orbit(230)
+create_orbit(300)
+create_orbit(370)
+create_orbit(440)
 
 
-# Create planets
+# Asteroid Belt
+
+asteroids = []
+
+for _ in range(300):
+
+    asteroid = turtle.Turtle()
+    asteroid.shape("circle")
+    asteroid.color("gray")
+    asteroid.shapesize(0.15)
+    asteroid.penup()
+
+    radius = random.randint(180, 210)
+    angle = random.uniform(0, 2 * math.pi)
+
+    x = radius * math.cos(angle)
+    y = radius * math.sin(angle)
+
+    asteroid.goto(x, y)
+
+    asteroids.append(asteroid)
+
+
+# Planets
 
 mercury = Planet(
     "Mercury",
     "gray",
-    80,
+    50,
     0.01,
     "57.9 million km",
     "88 days",
@@ -61,7 +96,7 @@ mercury = Planet(
 venus = Planet(
     "Venus",
     "orange",
-    120,
+    80,
     0.007,
     "108.2 million km",
     "225 days",
@@ -72,7 +107,7 @@ venus = Planet(
 earth = Planet(
     "Earth",
     "blue",
-    150,
+    110,
     0.005,
     "149.6 million km",
     "365 days",
@@ -83,7 +118,7 @@ earth = Planet(
 mars = Planet(
     "Mars",
     "red",
-    220,
+    160,
     0.003,
     "227.9 million km",
     "687 days",
@@ -94,29 +129,42 @@ mars = Planet(
 jupiter = Planet(
     "Jupiter",
     "orange",
-    320,
+    230,
     0.001,
     "778.5 million km",
     "11.86 years",
     "13.07 km/s",
-    2.0
+    2.6
 )
 
 saturn = Planet(
     "Saturn",
     "gold",
-    420,
+    300,
     0.0008,
     "1.43 billion km",
     "29.46 years",
     "9.68 km/s",
-    1.8
+     2.2
+)
+
+saturn_ring = turtle.Turtle()
+saturn_ring.shape("circle")
+saturn_ring.color("lightgray")
+saturn_ring.penup()
+
+# stretch the circle into an ellipse
+saturn_ring.shapesize(stretch_wid=0.4, stretch_len=2.8)
+
+saturn_ring.shapesize(
+    stretch_wid=0.3,
+    stretch_len=3.5
 )
 
 uranus = Planet(
     "Uranus",
-    "light blue",
-    520,
+    "cyan",
+    370,
     0.0006,
     "2.87 billion km",
     "84 years",
@@ -126,8 +174,8 @@ uranus = Planet(
 
 neptune = Planet(
     "Neptune",
-    "dark blue",
-    620,
+    "blue",
+    440,
     0.0005,
     "4.50 billion km",
     "164.8 years",
@@ -136,19 +184,9 @@ neptune = Planet(
 )
 
 
-# Information panel
-
-info = turtle.Turtle()
-info.hideturtle()
-info.color("white")
-info.penup()
-
-
-# Animation loop
+# Main Loop
 
 while True:
-
-    # Move planets
 
     mercury.move()
     venus.move()
@@ -156,33 +194,15 @@ while True:
     mars.move()
     jupiter.move()
     saturn.move()
+
+
+    saturn_ring.goto(
+        saturn.body.xcor(),
+        saturn.body.ycor()
+    )
+
     uranus.move()
     neptune.move()
 
-    # Update information
-
-    info.clear()
-
-    info.goto(-650, 300)
-
-    info.write(
-        """
-PLANETS
-
-Mercury
-Venus
-Earth
-Mars
-Jupiter
-Saturn
-Uranus
-Neptune
-
-Version 4 In Progress
-        """,
-        font=("Arial", 12, "normal")
-    )
-
     screen.update()
-
     time.sleep(0.01)
