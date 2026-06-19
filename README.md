@@ -1,25 +1,57 @@
 # 🌍 Solar System Simulator
 
-> A Python-based astrophysics project exploring planetary motion through simulation.
+> A Python-based astrophysics project that visualizes planetary motion and explores the mathematics and physics behind our Solar System.
 
 ## 🚀 About the Project
 
 This project is part of my journey to learn **Python**, **Astrophysics**, and **Scientific Computing**.
 
-The goal is to build a visual simulation of the Solar System while understanding the mathematics and physics behind planetary motion.
+The simulator models planetary motion using trigonometric functions and object-oriented programming while gradually incorporating real astronomical data and interactive features.
 
 ---
 
 ## 📈 Current Progress
 
-### Version 1: Earth Orbit Simulation
+### Version 1: Earth Orbit Simulation ✅
 
-* [ ] Repository Setup
-* [ ] GitHub Integration
-* [ ] Sun Created Using Turtle Graphics
-* [ ] Earth Object
-* [ ] Orbit Path
-* [ ] Earth Orbit Animation
+* Repository Setup
+* GitHub Integration
+* Sun Created Using Turtle Graphics
+* Earth Object
+* Orbit Path
+* Earth Orbit Animation
+
+### Version 2: Multi-Planet Simulation ✅
+
+* Planet Class (OOP)
+* Mercury Added
+* Venus Added
+* Earth Added
+* Mars Added
+* Multiple Orbit Paths
+* Planet Information Panel
+
+### Version 3: Planetary Data System ✅
+
+* Distance from Sun
+* Orbital Period
+* Orbital Velocity
+* Planet Data Integration
+* Improved Information Display
+
+### Version 4: Complete Solar System & Interactivity 🚧
+
+Current Development:
+
+* Add Jupiter
+* Add Saturn
+* Add Uranus
+* Add Neptune
+* Add Asteroid Belt
+* Planet Labels
+* Interactive Information System
+* Speed Controls
+* Pause / Resume
 
 ---
 
@@ -28,6 +60,7 @@ The goal is to build a visual simulation of the Solar System while understanding
 * Python
 * Turtle Graphics
 * Math Module
+* Object-Oriented Programming (OOP)
 * Git
 * GitHub
 
@@ -35,51 +68,60 @@ The goal is to build a visual simulation of the Solar System while understanding
 
 ## 🧠 Concepts Covered
 
-* Object-Oriented Programming (OOP)
+* Object-Oriented Programming
 * Trigonometry
+* Circular Motion
 * Orbital Motion
 * Scientific Visualization
 * Basic Astrophysics
+* Simulation Design
+* Software Development Workflow
 
 ---
 
 ## 🗺 Roadmap
 
-### Version 1
+### Version 4
 
-* Sun at the center
-* Earth orbiting the Sun
-* Circular orbit animation
+* Complete the 8-Planet Solar System
+* Asteroid Belt Simulation
+* Planet Labels
+* Interactive Planet Selection
+* Speed Controls
+* Pause / Resume
 
-### Version 2
+### Version 5
 
-* Add Mercury, Venus, Mars and other planets
-* Improve visuals
+* Habitable Zone Visualization
+* Kepler's Laws Demonstration
+* Improved Physics Model
+* Enhanced Graphics
 
-### Version 3
+### Version 6
 
-* Display orbital velocity
-* Display orbital periods
-* Display distance from the Sun
+* Web-Based Interactive Simulator
+* Modern UI
+* Real Astronomical Data Integration
+* Advanced Astrophysics Features
+
+---
 
 ## 🔭 Future Features
 
-As the project evolves, I plan to add:
+* Full Solar System Simulation
+* Asteroid Belt
+* Planet Hover Information
+* Interactive Controls
+* Habitable Zone Visualization
+* Kepler's Laws Demonstration
+* Exoplanet Simulation Mode
+* Real NASA Data Integration
+* Enhanced Graphics and Realism
+* Web Deployment
 
-* Planet information panels
-* Orbital period visualization
-* Distance from the Sun display
-* Speed controls
-* Pause and Resume functionality
-* Exoplanet simulation mode
-* Habitable Zone visualization
-* Demonstrations of Kepler's Laws of Planetary Motion
-* Improved graphics and realism
-* Interactive user controls
+---
 
 ## 📸 Screenshots
-
-Screenshots and demos will be added as development progresses.
 
 ### Version 1 - Earth Orbit Simulation
 
@@ -89,7 +131,7 @@ Screenshots and demos will be added as development progresses.
 
 ![Multiple Planets](screenshots/version2-multiple-planets.png)
 
-### Version 3 - Add Planetary Data
+### Version 3 - Planetary Data System
 
 ![Planetary Data](screenshots/version3-officialdataof_planets.png)
 
@@ -106,5 +148,7 @@ Delhi Technological University (DTU)
 
 * 🌌 Astrophysics
 * 🚀 Space Exploration
-* 💻 Programming
+* 💻 Software Development
 * 🔬 Scientific Computing
+
+> “We are all made of star-stuff.” — Carl Sagan
