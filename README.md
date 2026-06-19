@@ -89,6 +89,10 @@ Screenshots and demos will be added as development progresses.
 
 ![Multiple Planets](screenshots/version2-multiple-planets.png)
 
+### Version 3 - Add Planetary Data
+
+![Planetary Data](screenshots/version3-officialdataof_planets.png)
+
 ---
 
 ## 👨‍💻 Author
