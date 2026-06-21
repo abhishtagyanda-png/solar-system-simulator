@@ -191,8 +191,61 @@ neptune = Planet(
     1.3
 )
 
+def show_planet_info(planet):
+
+    info_panel.clear()
+
+    info_panel.goto(-650, 250)
+
+    info_panel.write(
+        f"""
+Planet: {planet.name}
+
+Distance:
+{planet.distance}
+
+Period:
+{planet.period}
+
+Velocity:
+{planet.velocity}
+""",
+        font=("Arial", 12, "normal")
+    )
 
 # Main Loop
+
+def handle_click(x, y):
+
+    planets = [
+        mercury,
+        venus,
+        earth,
+        mars,
+        jupiter,
+        saturn,
+        uranus,
+        neptune
+    ]
+
+    for planet in planets:
+
+        px = planet.body.xcor()
+        py = planet.body.ycor()
+
+        distance = ((x - px)**2 + (y - py)**2) ** 0.5
+
+        if distance < 20:
+
+            show_planet_info(planet)
+            break
+
+screen.onclick(handle_click)
+
+info_panel = turtle.Turtle()
+info_panel.hideturtle()
+info_panel.color("white")
+info_panel.penup()
 
 while True:
 
