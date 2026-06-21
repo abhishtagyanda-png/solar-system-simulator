@@ -117,16 +117,36 @@ PLANET_DESCRIPTIONS = {
 # ---------------------------------------------------------------------------
  
 state = {
-    "paused":       False,
-    "zoom":         1.0,
-    "zoom_min":     0.4,
-    "zoom_max":     2.5,
-    "zoom_step":    0.1,
-    "hovered":      None,   # planet name currently under the cursor
-    "locked":       None,   # panel locked to this planet/sun after a click
+    "paused": False,
+    "zoom": 1.0,
+    "zoom_min": 0.4,
+    "zoom_max": 2.5,
+    "zoom_step": 0.1,
+    "speed_multiplier": 1.0,
+    "hovered": None,
+    "locked": None,
 }
  
- 
+def increase_speed():
+
+    state["speed_multiplier"] += 0.25
+
+    if state["speed_multiplier"] > 5:
+        state["speed_multiplier"] = 5
+
+    if state["locked"] is None:
+        show_intro_panel()
+
+def decrease_speed():
+
+    state["speed_multiplier"] -= 0.25
+
+    if state["speed_multiplier"] < 0.25:
+        state["speed_multiplier"] = 0.25
+
+    if state["locked"] is None:
+        show_intro_panel()
+
 # ---------------------------------------------------------------------------
 # Galaxy background
 # ---------------------------------------------------------------------------
@@ -269,6 +289,8 @@ def create_planets():
         "Uranus":  Planet("Uranus",  "cyan",   405, 0.0006,"2.87 billion km",  "84 years",     "6.80 km/s",  1.30),
         "Neptune": Planet("Neptune", "blue",   475, 0.0005,"4.50 billion km",  "164.8 years",  "5.43 km/s",  1.30),
     }
+
+planet_labels = {}
  
  
 # ---------------------------------------------------------------------------
@@ -344,12 +366,16 @@ def write_panel(lines, heading_color="white"):
  
 def show_intro_panel():
     draw_panel_box()
+
     write_panel([
-        ("☀  Solar System", ("Verdana", 12, "bold")),
+        ("☀ Solar System", ("Verdana", 12, "bold")),
         ("", ("Verdana", 4, "normal")),
         ("Hover a planet to see info.", ("Verdana", 10, "normal")),
         ("Click to lock the panel.", ("Verdana", 10, "normal")),
         ("Scroll or Z/X to zoom.", ("Verdana", 10, "normal")),
+        ("", ("Verdana", 4, "normal")),
+        (f"Simulation Speed: {state['speed_multiplier']}x",
+         ("Verdana", 10, "normal")),
     ], heading_color="gold")
  
  
@@ -601,6 +627,9 @@ def bind_keys():
     screen.onkey(zoom_in,      "z")
     screen.onkey(zoom_out,     "x")
     screen.onkey(zoom_reset,   "r")
+
+    screen.onkey(increase_speed, "Up")
+    screen.onkey(decrease_speed, "Down")
  
  
 # ---------------------------------------------------------------------------
@@ -609,14 +638,28 @@ def bind_keys():
  
 def animate():
     if not state["paused"]:
-        for p in planets.values():
+        for name, p in planets.items():
             # Offset planet position by SIM_OFFSET_X so Sun stays centred
             # in the open right-hand area
             p.body.goto(
                 SIM_OFFSET_X + p.orbit_radius * math.cos(p.angle),
                               p.orbit_radius * math.sin(p.angle),
             )
-            p.angle += p.speed
+            p.angle += (
+    p.speed *
+    state["speed_multiplier"] )
+
+            planet_labels[name].clear()
+
+            planet_labels[name].goto(
+                p.body.xcor() + 12,
+                p.body.ycor() + 12
+            )
+
+            planet_labels[name].write(
+                name,
+                font=("Arial", 8, "normal")
+            )
  
         saturn = planets["Saturn"]
         saturn_ring.goto(saturn.body.xcor(), saturn.body.ycor())
@@ -638,6 +681,14 @@ if __name__ == "__main__":
  
     asteroid_drawer, asteroids = create_asteroid_belt()
     planets = create_planets()
+
+    for name in planets:
+        label = turtle.Turtle()
+        label.hideturtle()
+        label.penup()
+        label.color("white")
+        planet_labels[name] = label
+
     saturn_ring = create_saturn_ring()
  
     # Apply initial zoom so planets carry the SIM_OFFSET_X correctly
