@@ -194,28 +194,126 @@ neptune = Planet(
 def show_planet_info(planet):
 
     info_panel.clear()
+    box.clear()
 
-    info_panel.goto(-650, 250)
+    # Draw box
 
+    box.goto(-670, 330)
+    box.pendown()
+
+    for _ in range(2):
+        box.forward(500)
+        box.right(90)
+        box.forward(400)
+        box.right(90)
+
+    box.penup()
+
+    descriptions = {
+
+        "Mercury":
+        "Closest planet to the Sun.\nSmallest planet in the Solar System.",
+
+        "Venus":
+        "Second planet from the Sun.\nOften called Earth's twin.",
+
+        "Earth":
+        "Our home planet.\nOnly known planet with life.",
+
+        "Mars":
+        "The Red Planet.\nTarget of future human missions.",
+
+        "Jupiter":
+        "Largest planet in the Solar System.\nA giant gas world.",
+
+        "Saturn":
+        "Known for its spectacular ring system.",
+
+        "Uranus":
+        "An ice giant.\nRotates almost on its side.",
+
+        "Neptune":
+        "The most distant planet.\nKnown for powerful winds."
+    }
+
+    types = {
+
+        "Mercury": "Terrestrial Planet",
+        "Venus": "Terrestrial Planet",
+        "Earth": "Terrestrial Planet",
+        "Mars": "Terrestrial Planet",
+        "Jupiter": "Gas Giant",
+        "Saturn": "Gas Giant",
+        "Uranus": "Ice Giant",
+        "Neptune": "Ice Giant"
+    }
+
+    info_panel.goto(-650, 300)
     info_panel.write(
         f"""
-Planet: {planet.name}
+{planet.name}
 
-Distance:
+Type:
+{types[planet.name]}
+
+{descriptions[planet.name]}
+
+Distance from Sun:
 {planet.distance}
 
-Period:
+Orbital Period:
 {planet.period}
 
-Velocity:
+Orbital Velocity:
 {planet.velocity}
 """,
-        font=("Arial", 12, "normal")
+        font=("Times New Roman", 12, "normal")
     )
 
 # Main Loop
 
 def handle_click(x, y):
+
+    # Sun click
+
+    if ((x - 0)**2 + (y - 0)**2) ** 0.5 < 35:
+
+        info_panel.clear()
+        box.clear()
+
+        box.goto(-670, 330)
+        box.pendown()
+
+        for _ in range(2):
+            box.forward(500)
+            box.right(90)
+            box.forward(400)
+            box.right(90)
+
+        box.penup()
+
+        info_panel.goto(-30, 30)
+
+        info_panel.write(
+            """
+Sun
+
+Type:
+G-Type Main Sequence Star
+
+The Sun contains more than
+99% of the Solar System's mass.
+
+Age:
+4.6 Billion Years
+
+Surface Temperature:
+5500 °C
+""",
+            font=("Times New Roman", 10, "normal")
+        )
+
+        return
 
     planets = [
         mercury,
@@ -246,6 +344,12 @@ info_panel = turtle.Turtle()
 info_panel.hideturtle()
 info_panel.color("white")
 info_panel.penup()
+info_panel.goto(-30, 30)
+
+box = turtle.Turtle()
+box.hideturtle()
+box.color("white")
+box.penup()
 
 while True:
 
