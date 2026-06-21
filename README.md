@@ -203,6 +203,10 @@ As development progresses, new features are added incrementally, allowing the pr
  
 ![Moving Asteroid Belt](screenshots/version4-solarsystem-edited.png)
 
+### Version 4 - Complete Solar System Motion (Edited)
+
+![Moving Asteroid Belt](demos/version4-full-solarsytem-movement-withpanel.mp4)
+
 ---
 
 ## 👨‍💻 Author
