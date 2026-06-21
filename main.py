@@ -50,11 +50,11 @@ from planet import Planet   # noqa: E402  (needs screen to exist first)
 # The simulation sits in the right-hand 75 % of the window.
 # The left 25 % is reserved for the info panel + controls.
  
-PANEL_MARGIN   = 12
+PANEL_MARGIN   = 5
 PANEL_LEFT     = -HW + PANEL_MARGIN
-PANEL_RIGHT    = -HW + int(SW * 0.22)   # ≈ 22 % of width
-PANEL_TOP      = HH  - PANEL_MARGIN
-PANEL_BOTTOM   = -HH + 70               # leave room for button below
+PANEL_RIGHT    = -HW + int(SW * 0.17)   # ≈ 22 % of width
+PANEL_TOP = HH - 100
+PANEL_BOTTOM = -100          # leave room for button below
  
 PANEL_WIDTH    = PANEL_RIGHT - PANEL_LEFT
 PANEL_HEIGHT   = PANEL_TOP   - PANEL_BOTTOM
@@ -75,7 +75,7 @@ ZOOM_MID       = (ZOOM_BOTTOM + ZOOM_TOP) / 2
 ZOOM_THIRD     = PANEL_WIDTH // 3
  
 # Simulation centre is shifted right so it doesn't overlap the panel
-SIM_OFFSET_X   = (PANEL_RIGHT + HW) // 2 - HW // 2
+SIM_OFFSET_X = 130
 # (keeps Sun roughly centred in the open space to the right of the panel)
  
 # Base orbit radii — will be scaled up/down by zoom
@@ -93,7 +93,7 @@ PLANET_TYPES = {
     "Mercury": "Terrestrial Planet",
     "Venus":   "Terrestrial Planet",
     "Earth":   "Terrestrial Planet",
-    "Mars":    "Terrestrial Planet",
+    "Mars":   "Terrestrial Planet",
     "Jupiter": "Gas Giant",
     "Saturn":  "Gas Giant",
     "Uranus":  "Ice Giant",
@@ -101,12 +101,12 @@ PLANET_TYPES = {
 }
  
 PLANET_DESCRIPTIONS = {
-    "Mercury": "Closest to the Sun.\nSmallest planet in the Solar System.",
+    "Mercury": "Closest to the Sun.\nSmallest planet in the \nSolar System.",
     "Venus":   "Second from the Sun.\nCalled Earth's twin.",
     "Earth":   "Our home planet.\nOnly known world with life.",
-    "Mars":    "The Red Planet.\nTarget of future human missions.",
-    "Jupiter": "Largest planet in the Solar System.\nA colossal gas world.",
-    "Saturn":  "Famous for its spectacular rings.\nA gas giant like Jupiter.",
+    "Mars":    "The Red Planet.\nTarget of future human \nmissions.",
+    "Jupiter": "Largest planet in the \nSolar System.\nA colossal gas world.",
+    "Saturn":  "Famous for its spectacular \nrings.\nA gas giant like Jupiter.",
     "Uranus":  "An ice giant.\nRotates almost on its side.",
     "Neptune": "The most distant planet.\nKnown for powerful storms.",
 }
