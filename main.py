@@ -52,9 +52,9 @@ from planet import Planet   # noqa: E402  (needs screen to exist first)
  
 PANEL_MARGIN   = 5
 PANEL_LEFT     = -HW + PANEL_MARGIN
-PANEL_RIGHT    = -HW + int(SW * 0.17)   # ≈ 22 % of width
-PANEL_TOP = HH - 100
-PANEL_BOTTOM = -100          # leave room for button below
+PANEL_RIGHT    = -HW + int(SW * 0.23)   # ≈ 22 % of width
+PANEL_TOP = HH - 60
+PANEL_BOTTOM = -220        # leave room for button below
  
 PANEL_WIDTH    = PANEL_RIGHT - PANEL_LEFT
 PANEL_HEIGHT   = PANEL_TOP   - PANEL_BOTTOM
@@ -101,12 +101,12 @@ PLANET_TYPES = {
 }
  
 PLANET_DESCRIPTIONS = {
-    "Mercury": "Closest to the Sun.\nSmallest planet in the \nSolar System.",
+    "Mercury": "Closest to the Sun.\nSmallest planet in the Solar System.",
     "Venus":   "Second from the Sun.\nCalled Earth's twin.",
     "Earth":   "Our home planet.\nOnly known world with life.",
-    "Mars":    "The Red Planet.\nTarget of future human \nmissions.",
-    "Jupiter": "Largest planet in the \nSolar System.\nA colossal gas world.",
-    "Saturn":  "Famous for its spectacular \nrings.\nA gas giant like Jupiter.",
+    "Mars":    "The Red Planet.\nTarget of future human missions.",
+    "Jupiter": "Largest planet in the Solar System.\nA colossal gas world.",
+    "Saturn":  "Famous for its spectacular rings.\nA gas giant like Jupiter.",
     "Uranus":  "An ice giant.\nRotates almost on its side.",
     "Neptune": "The most distant planet.\nKnown for powerful storms.",
 }
@@ -331,8 +331,8 @@ def write_panel(lines, heading_color="white"):
     """Write *lines* (a list of (text, font_tuple) pairs) top-down in the panel."""
     info_panel.clear()
     line_h = 18          # pixels per line (Verdana 11)
-    x = PANEL_LEFT + 14
-    y = PANEL_TOP  - 28
+    x = PANEL_LEFT + 20
+    y = PANEL_TOP - 40
     for text, font in lines:
         info_panel.color(heading_color if font[2] == "bold" else "white")
         info_panel.goto(x, y)
