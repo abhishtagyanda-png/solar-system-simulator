@@ -73,6 +73,13 @@ ZOOM_BOTTOM    = BUTTON_TOP + PANEL_MARGIN
 ZOOM_TOP       = ZOOM_BOTTOM + ZOOM_H
 ZOOM_MID       = (ZOOM_BOTTOM + ZOOM_TOP) / 2
 ZOOM_THIRD     = PANEL_WIDTH // 3
+
+SPEED_H = 44
+
+SPEED_BOTTOM = ZOOM_TOP + PANEL_MARGIN
+SPEED_TOP = SPEED_BOTTOM + SPEED_H
+
+SPEED_MID = (SPEED_BOTTOM + SPEED_TOP) / 2
  
 # Simulation centre is shifted right so it doesn't overlap the panel
 SIM_OFFSET_X = 130
@@ -458,6 +465,67 @@ def toggle_pause():
  
 zoom_box   = turtle.Turtle(); zoom_box.hideturtle();   zoom_box.penup();   zoom_box.speed(0)
 zoom_label = turtle.Turtle(); zoom_label.hideturtle(); zoom_label.penup(); zoom_label.speed(0)
+
+speed_box = turtle.Turtle()
+speed_box.hideturtle()
+speed_box.penup()
+
+speed_label = turtle.Turtle()
+speed_label.hideturtle()
+speed_label.penup()
+
+def draw_speed_controls():
+
+    speed_box.clear()
+    speed_label.clear()
+
+    bw = PANEL_WIDTH
+
+    speed_box.goto(PANEL_LEFT, SPEED_TOP)
+    speed_box.setheading(0)
+
+    speed_box.pendown()
+    speed_box.color("gray55", "gray15")
+
+    speed_box.begin_fill()
+
+    for dist in [bw, SPEED_H, bw, SPEED_H]:
+        speed_box.forward(dist)
+        speed_box.right(90)
+
+    speed_box.end_fill()
+    speed_box.penup()
+
+    for frac in [1/3, 2/3]:
+        speed_box.goto(PANEL_LEFT + int(bw * frac), SPEED_TOP)
+        speed_box.pendown()
+        speed_box.goto(PANEL_LEFT + int(bw * frac), SPEED_BOTTOM)
+        speed_box.penup()
+
+    third = bw // 3
+
+    cx_minus = PANEL_LEFT + third // 2
+    cx_speed = PANEL_LEFT + third + third // 2
+    cx_plus = PANEL_LEFT + 2 * third + third // 2
+
+    ty = SPEED_MID - 8
+
+    speed_label.color("white")
+
+    speed_label.goto(cx_minus, ty)
+    speed_label.write("-", align="center",
+                      font=("Arial", 16, "bold"))
+
+    speed_label.goto(cx_speed, ty)
+    speed_label.write(
+        f"{state['speed_multiplier']:.2f}x",
+        align="center",
+        font=("Arial", 10, "bold")
+    )
+
+    speed_label.goto(cx_plus, ty)
+    speed_label.write("+", align="center",
+                      font=("Arial", 16, "bold"))
  
  
 def draw_zoom_controls():
