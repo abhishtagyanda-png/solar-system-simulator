@@ -141,8 +141,7 @@ def increase_speed():
     if state["speed_multiplier"] > 5:
         state["speed_multiplier"] = 5
 
-    if state["locked"] is None:
-        show_intro_panel()
+        draw_speed_controls()
 
 def decrease_speed():
 
@@ -151,8 +150,7 @@ def decrease_speed():
     if state["speed_multiplier"] < 0.25:
         state["speed_multiplier"] = 0.25
 
-    if state["locked"] is None:
-        show_intro_panel()
+    draw_speed_controls()
 
 # ---------------------------------------------------------------------------
 # Galaxy background
@@ -532,43 +530,45 @@ def draw_zoom_controls():
     zoom_box.clear()
     zoom_label.clear()
  
-    bw = PANEL_WIDTH
+draw_speed_controls()
+
+bw = PANEL_WIDTH
     # Outer box
-    zoom_box.goto(PANEL_LEFT, ZOOM_TOP)
-    zoom_box.setheading(0)
-    zoom_box.pendown()
-    zoom_box.color("gray55", "gray15")
-    zoom_box.begin_fill()
-    for dist in [bw, ZOOM_H, bw, ZOOM_H]:
+zoom_box.goto(PANEL_LEFT, ZOOM_TOP)
+zoom_box.setheading(0)
+zoom_box.pendown()
+zoom_box.color("gray55", "gray15")
+zoom_box.begin_fill()
+for dist in [bw, ZOOM_H, bw, ZOOM_H]:
         zoom_box.forward(dist)
         zoom_box.right(90)
-    zoom_box.end_fill()
-    zoom_box.penup()
+zoom_box.end_fill()
+zoom_box.penup()
  
     # Dividers between – | label | +
-    for frac in [1/3, 2/3]:
+for frac in [1/3, 2/3]:
         zoom_box.goto(PANEL_LEFT + int(bw * frac), ZOOM_TOP)
         zoom_box.pendown()
         zoom_box.goto(PANEL_LEFT + int(bw * frac), ZOOM_BOTTOM)
         zoom_box.penup()
  
     # Labels
-    zoom_label.color("white")
-    third = bw // 3
-    cx_minus  = PANEL_LEFT + third // 2
-    cx_pct    = PANEL_LEFT + third + third // 2
-    cx_plus   = PANEL_LEFT + 2 * third + third // 2
-    ty = ZOOM_MID - 8
+zoom_label.color("white")
+third = bw // 3
+cx_minus  = PANEL_LEFT + third // 2
+cx_pct    = PANEL_LEFT + third + third // 2
+cx_plus   = PANEL_LEFT + 2 * third + third // 2
+ty = ZOOM_MID - 8
  
-    zoom_label.goto(cx_minus, ty)
-    zoom_label.write("−", align="center", font=("Arial", 16, "bold"))
+zoom_label.goto(cx_minus, ty)
+zoom_label.write("−", align="center", font=("Arial", 16, "bold"))
+
+pct = int(state["zoom"] * 100)
+zoom_label.goto(cx_pct, ty)
+zoom_label.write(f"{pct} %", align="center", font=("Arial", 11, "bold"))
  
-    pct = int(state["zoom"] * 100)
-    zoom_label.goto(cx_pct, ty)
-    zoom_label.write(f"{pct} %", align="center", font=("Arial", 11, "bold"))
- 
-    zoom_label.goto(cx_plus, ty)
-    zoom_label.write("+", align="center", font=("Arial", 16, "bold"))
+zoom_label.goto(cx_plus, ty)
+zoom_label.write("+", align="center", font=("Arial", 16, "bold"))
  
  
 def apply_zoom(new_zoom):
@@ -635,7 +635,31 @@ def handle_click(mx, my):
                     ZOOM_BOTTOM, ZOOM_TOP):
         zoom_in()
         return
- 
+        
+        # Speed minus
+
+    if point_in_box(
+        mx, my,
+        PANEL_LEFT,
+        PANEL_LEFT + PANEL_WIDTH // 3,
+        SPEED_BOTTOM,
+        SPEED_TOP
+    ):
+        decrease_speed()
+        return
+
+    # Speed plus
+
+    if point_in_box(
+        mx, my,
+        PANEL_LEFT + 2 * PANEL_WIDTH // 3,
+        PANEL_RIGHT,
+        SPEED_BOTTOM,
+        SPEED_TOP
+    ):
+        increase_speed()
+        return
+
     # Sun
     if hit_sun(mx, my):
         state["locked"] = "Sun"
