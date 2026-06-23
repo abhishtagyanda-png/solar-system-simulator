@@ -38,7 +38,10 @@ class Planet:
         self.body.shape("circle")
         self.body.color(color)
         self.body.shapesize(size)
-        self.body.penup()
+        self.body.pencolor(color)
+        self.body.pensize(1)
+
+        self.trails_enabled = True
  
         # Floating name label (shown on hover)
         self.label = turtle.Turtle()
