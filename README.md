@@ -207,6 +207,9 @@ As development progresses, new features are added incrementally, allowing the pr
 
 ![Moving Asteroid Belt](demos/version4-full-solarsytem-movement-withpanel.mp4)
 
+### Version 5 - Added Trails in the Solar System 
+
+![Added Trails](screenshots/version5-Added_Trails)
 ---
 
 ## 👨‍💻 Author

@@ -760,6 +760,11 @@ def animate():
  
     screen.update()
     screen.ontimer(animate, ANIMATION_DELAY_MS)
+
+    if p.trails_enabled:
+        p.body.pendown()
+    else:
+        p.body.penup()
  
  
 # ---------------------------------------------------------------------------
